@@ -37,7 +37,7 @@ describe ApplicationController do
     end
 
     context 'returning anonymous user' do
-      let(:user) { User.create(uuid: '1234567543', password: '1234567543') }
+      let(:user) { User.create(password: '1234567543') }
 
       it 'returns the saved anonymous user' do
         expect(subject).to eq user

@@ -5,8 +5,8 @@ describe User do
   describe '.create_anonymous!' do    
     subject { User.create_anonymous!.reload  }
 
-    it 'generates a random uuid and saves' do
-      expect(subject.uuid).to_not be_nil  
+    it 'has no email address' do
+      expect(subject.email).to be_nil  
     end
 
     it 'assigns a random password' do

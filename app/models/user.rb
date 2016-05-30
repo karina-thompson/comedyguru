@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
 
 
   def self.create_anonymous!
-    uuid = SecureRandom.uuid
-    User.create(uuid: uuid, password: uuid)
+    User.create(password: SecureRandom.uuid)
   end
 
   def anonymous?
