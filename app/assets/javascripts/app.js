@@ -1,14 +1,7 @@
 
-$(document).ready(function() {
-  $('.emoticon').on('click', addLaugh);
-  $(".button-collapse").sideNav();
-
-});
 
 
-
-
-var addLaugh = function(event) {
+var toggleLike = function(event) {
   var $card = $(event.target).closest('.card-content')
   var comedianId = $card.data('comedian-id');
   
@@ -26,7 +19,6 @@ var addLaugh = function(event) {
       method: 'delete'
     }
   }
-
 
   $.ajax(settings).done(function() {
     $(event.target).toggleClass('gray');

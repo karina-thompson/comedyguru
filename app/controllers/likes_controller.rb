@@ -7,11 +7,13 @@ class LikesController < ApplicationController
 
   def delete
     like = Like.find_by(user_id: current_user.id, comedian_id: params[:comedian_id])
+    
+    if like.nil?
+      head :not_found 
+      return
+    end
+
     like.destroy
-    head :accepted
+    head :no_content
   end
-
-
-
-
 end

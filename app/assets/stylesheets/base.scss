@@ -8,7 +8,9 @@ $light-secondary-color: #F98F45;
 */
 
 @import "materialize/components/color";
-$primary-color: color("orange", "lighten-2") !default;
+$primary-color: color("cyan", "lighten-2") !default;
+$accent-color: #FF6E00;
+$accent-color-light: #ffcc80;
 @import 'materialize';
 
 @import "index";

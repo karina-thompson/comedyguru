@@ -1,0 +1,27 @@
+
+<div class="container">
+
+  <div class="row">
+      <div class="card">
+        <div class="card-image">
+          <img src=<%= @comedian.image %>>
+        </div>
+        <div class="card-content" data-comedian-id="<%= @comedian.id %>">
+          <span class="comedian"><%= @comedian.name %> (<%= @comedian.country %>)</span> 
+          <% if current_user.liked_comedians.member?(@comedian) %>
+            <span><img class="emoticon" src=<%= image_path('emoji.png') %> alt="laugh"></span>
+          <% else %>
+          <span><img class="emoticon gray" src=<%= image_path('emoji.png') %> alt="laugh"></span>
+        <% end %>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.emoticon').on('click', toggleLike);
+    $(".button-collapse").sideNav();
+  });
+</script>
