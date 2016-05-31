@@ -1,12 +1,15 @@
 
-$primary-color: #12908E !default;
+/*$primary-color: #12908E !default;
 $primary-color-light: #97CECC !default;
 $primary-color-dark: #16594A !default;
 $link-color: #F98F45 !default;
 $secondary-color: #C4421A !default;
 $light-secondary-color: #F98F45;
+*/
 
+@import "materialize/components/color";
+$primary-color: color("orange", "lighten-2") !default;
+@import 'materialize';
 
-@import "materialize";
 @import "index";
 

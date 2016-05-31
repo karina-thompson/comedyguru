@@ -4,10 +4,23 @@ body {
 }
 
 .card {
-  background-color: $primary-color-dark;
+  background-color: $primary-color;
   display: inline-block;
 }
 
-a {
-  color: $light-secondary-color;
+.emoticon {
+  
+  width: 30px;
+  float: right;
 }
+
+.gray { 
+  filter: gray; /* IE6-9 */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+}
+
+nav {
+  background-color: $primary-color-dark;
+}
+

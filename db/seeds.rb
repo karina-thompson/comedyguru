@@ -6,35 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require 'HTTParty'
-require 'pry'
-require 'nokogiri'
 
-count = 2
-comedians = []
-
-page = HTTParty.get('http://www.comedyfestival.com.au/2016/season/shows/?filters[sort]=alpha&filters[category]=all&filters[date]=&filters[venue]=all&filters[accessible]=')
-parse_page = Nokogiri::HTML(page)
-parse_page.css('.show-brief__title strong').map do |show|
-  comedian_name = show.text
-  comedians << comedian_name
-end
-
-
-
-until count > 25 
-  url = "http://www.comedyfestival.com.au/2016/season/shows/" + count.to_s + "?filters[sort]=alpha&filters[category]=all&filters[date]=&filters[venue]=all&filters[accessible]="
-  page = HTTParty.get(url)
-  parse_page = Nokogiri::HTML(page)
-  parse_page.css('.show-brief__title strong').map do |show|
-    comedian_name = show.text
-    comedians << comedian_name
-  end
-  count += 1
-end
-
-comedians.each do |name|
-  Comedian.create(name: name);
-end
-
+Comedian.create(name:'Celia Pacquola', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250')
+Comedian.create(name:'Simon Taylor', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Hannnah Gadsby', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Anne Edmonds', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Charlie Pickering', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Wil Anderson', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Dave Hughes', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Damian Callinan', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Dave Callan', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Felicity Ward', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create(name:'Gen Fricker', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250') 
+Comedian.create([{name:'Gillian Cosgriff', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}, {name:'Lawrence Leung', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}, {name:'Lessons with Luis', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}, {name:'Neal Portenza', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}, {name:'Rama Nicholas', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}, {name:'Sammy J & Randy', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}, {name:'Rhys Nicholson', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}, {name:'Steen Raskopoulos', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}, {name:'Tom Ballard', country: 'AUS', image:'https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250'}])
 

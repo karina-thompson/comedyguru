@@ -1,24 +1,39 @@
 
-<div class="container"> 
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Make me Laugh</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><i class="material-icons">search</i></li>
+      <li><a href="">Likes</a></li>
+      <li><a href="">Recomendations</a></li>
+      <li><a href="">Login</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">Javascript</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+    </ul>
+  </div>
+</nav>
+        
+
+
+<div class="container">
+
   <div class="row">
-  <% @comedians.each do |comedian| %>
-     
-        <div class="col s12 m6 l3">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97200&w=200&h=200">
-              <span class="card-title"><%= comedian.name %></span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
+   <% @comedians.each do |comedian| %>
+      <div class="card">
+        <div class="card-image">
+          <img src=<%= comedian.image %>>
         </div>
-    
+        <div class="card-content" data-comedian-id="<%= comedian.id %>">
+          <span class="comedian"><%= comedian.name %> (<%= comedian.country %>)</span>  
+          <span><img class="emoticon gray" src=<%= image_path('emoji.png') %> alt="laugh"></span>
+        </div>
+      </div>
     <% end %>
   </div>
+
 </div>
