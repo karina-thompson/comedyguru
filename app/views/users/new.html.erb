@@ -1,0 +1,32 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <div class="card-panel white">
+          <div class="row">
+          <h3>Create an account to add to this site</h3> 
+          <%= form_for(:user, url: signup_path) do |f|  %>
+            <div class="input-field col s12">
+             <%= f.label :name, "Name" %>
+             <%= f.text_field :name, class: 'validate' %>
+            </div>
+            <div class="input-field col s12">
+              <%= f.label :email, "Email" %>
+              <%= f.text_field :email, class: 'validate', type: 'email' %>
+            </div>
+            <div class="input-field col s12">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'validate' %>
+            </div>
+            <div class="input-field col s12">
+                <%= f.label :password_confirmation, "Confirm Password", "data-error" => "Passwords must match" %>
+                <%= f.password_field :password_confirmation, class: "validate #{@form_errors[:password_confirmation].nil? ? 'valid' : 'invalid'}" %>
+            </div>
+                <%= f.submit "Sign up" , class: "btn waves-effect waves-light" %>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<%= @form_errors.inspect %>

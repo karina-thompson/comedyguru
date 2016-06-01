@@ -12,6 +12,7 @@ $primary-color: color("cyan", "lighten-2") !default;
 $accent-color: #FF6E00;
 $accent-color-light: #ffcc80;
 @import 'materialize';
+@import 'forms';
+@import 'index';
 
-@import "index";
 

@@ -7,14 +7,14 @@ var toggleLike = function(event) {
   
   if ($(event.target).hasClass('gray')) {
     var settings = {
-      url: '/likes',
+      url: '/user/likes',
       data: { comedian_id: comedianId },
       method: 'post'
     }
   }
   else { 
     var settings = {
-      url: '/likes',
+      url: '/user/likes',
       data: { comedian_id: comedianId },
       method: 'delete'
     }

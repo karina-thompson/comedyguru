@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
-  get '/' => 'comedians#index'
-  get '/likes' => 'comedians#likes' 
-  get '/login' => 'users#login'
-  get '/:id' => 'comedians#show'
+  get '/'             => 'comedians#index'
+  get '/comedian/:id' => 'comedians#show'
 
+  get '/signup'  => 'users#new'
+  post '/signup' => 'users#create'
 
-  post '/likes' => 'likes#create'
+  get '/user/likes'    => 'users#likes' 
+  post '/user/likes'   => 'likes#create'
+  delete '/user/likes' => 'likes#delete'
 
-  delete '/likes' => 'likes#delete'
-
-
-  
-
+  get '/login'     => 'sessions#show'
+  post '/login'    => 'sessions#login'
+  delete '/logout' => 'sessions#logout'  
 
 end
