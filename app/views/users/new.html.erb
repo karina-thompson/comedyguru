@@ -19,8 +19,8 @@
                 <%= f.password_field :password, class: 'validate' %>
             </div>
             <div class="input-field col s12">
-                <%= f.label :password_confirmation, "Confirm Password", "data-error" => "Passwords must match" %>
-                <%= f.password_field :password_confirmation, class: "validate #{@form_errors[:password_confirmation].nil? ? 'valid' : 'invalid'}" %>
+                <%= f.label :password_confirmation, "Confirm Password" %>
+                <%= f.password_field :password_confirmation, class: "validate" %>
             </div>
                 <%= f.submit "Sign up" , class: "btn waves-effect waves-light" %>
               <% end %>

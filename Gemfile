@@ -29,7 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'materialize-sass'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'unicorn-rails'
+gem 'rack-handlers'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
