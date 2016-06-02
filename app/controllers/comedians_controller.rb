@@ -8,4 +8,10 @@ class ComediansController < ApplicationController
     @comedian = Comedian.find(params[:id])
   end
   
+  def search
+    @comedians = Comedian.where("name ilike ?","%#{params[:search]}%")
+    render :index
+  end
+
+  
 end

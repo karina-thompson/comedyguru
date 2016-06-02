@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug'
 
   gem 'rspec-rails', '~> 3.4'
+  gem 'simplecov'
 end
 
 group :development do

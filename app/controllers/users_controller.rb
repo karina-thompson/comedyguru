@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   def create
     if current_user.anonymous?
       saved = current_user.update(name: params[:user][:name], email: params[:user][:email], 
-                           password: params[:user][:password], 
-                           password_confirmation: params[:user][:password_confirmation])
+                          password: params[:user][:password], 
+                          password_confirmation: params[:user][:password_confirmation])
       unless saved
-        flash[:notice] = current_user.errors 
         render '/users/new'
+        # error message needs to go in here
         return
       end
     end
@@ -21,6 +21,9 @@ class UsersController < ApplicationController
     @comedians = current_user.liked_comedians
   end
 
+  def suggestions
+    @comedians = current_user.suggested_comedians
+  end
 
 end
 

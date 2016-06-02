@@ -1,15 +1,12 @@
 
-
-
-
-
 <div class="container">
 
   <div class="row">
-   <% @comedians.each do |comedian| %>
-    
+    <h3 class="flow-text heading">Based on a highly scientific matching process of your favourite comedians and those of other users, these comedians have a high probabilty of also making you laugh</h3>
+   <% @comedians[0..3].each do |comedian| %>
+
       <div class="card">
-          <a href="/comedian/<%= comedian.id %>"><img class="photo" src=<%= comedian.image %>></a>  
+          <a href="../comedian/<%= comedian.id %>"><img class="photo" src=<%= comedian.image %>></a>  
         <div class="card-content" data-comedian-id="<%= comedian.id %>">
           <span class="comedian"><%= comedian.name %> (<%= comedian.country %>)</span> 
 
@@ -20,7 +17,7 @@
         <% end %>
         </div>
       </div> 
-      <% end %>
-   </div>
-</div>
+    <% end %>
+  </div>
 
+</div>

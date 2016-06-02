@@ -1,26 +1,27 @@
 
+
 <div class="container">
   <div class="row">
       <div class="col s12 m10 offset-m1">
         <div class="card-panel white">
           <div class="row">
-          <h3>Create an account to add to this site</h3> 
+          <h2 class="flow-text heading"><strong>Create an account to add to the comedy database</strong></h2> 
           <%= form_for(:user, url: signup_path) do |f|  %>
             <div class="input-field col s12">
+             <%= f.text_field :name, class: 'validate', required: true %>
              <%= f.label :name, "Name" %>
-             <%= f.text_field :name, class: 'validate' %>
             </div>
             <div class="input-field col s12">
-              <%= f.label :email, "Email" %>
-              <%= f.text_field :email, class: 'validate', type: 'email' %>
+              <%= f.text_field :email, class: 'validate', type: 'email', required: true %>
+              <%= f.label :email, "Email", :'data-error' => "Please enter a valid email address" %>
             </div>
             <div class="input-field col s12">
                 <%= f.label :password %>
-                <%= f.password_field :password, class: 'validate' %>
+                <%= f.password_field :password, class: 'validate', type: 'password', required: true %>
             </div>
             <div class="input-field col s12">
                 <%= f.label :password_confirmation, "Confirm Password" %>
-                <%= f.password_field :password_confirmation, class: "validate" %>
+                <%= f.password_field :password_confirmation, class: "validate",  type: 'password', required: true %>
             </div>
                 <%= f.submit "Sign up" , class: "btn waves-effect waves-light" %>
               <% end %>
@@ -29,4 +30,4 @@
       </div>
     </div>
 </div>
-<%= @form_errors.inspect %>
+

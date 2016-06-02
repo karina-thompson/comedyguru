@@ -1,6 +1,5 @@
 
 
-
 var toggleLike = function(event) {
   var $card = $(event.target).closest('.card-content')
   var comedianId = $card.data('comedian-id');

@@ -5,3 +5,15 @@
 a {
   color: $primary-color-dark;
 }
+
+.notice {
+  color: white;
+  background-color: #ef5350;
+  cursor: pointer;
+}
+
+.heading {
+  color:  $primary-color-dark;
+  font-family: 'Rokkitt', serif;
+  font-weight: bold;
+}

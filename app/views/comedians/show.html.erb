@@ -17,11 +17,31 @@
       </div>
   </div>
 
+  <h3 class="flow-text heading">If <%= @comedian.name %> makes you laugh, you might also like:</h3>
+
+  
+  <div class="row">
+   <% @comedian.similar_comedians[0..3].each do |comedian| %>
+
+      <div class="card">
+          <a href="../comedian/<%= comedian.id  %>"><img class="photo" src=<%= comedian.image %>></a>  
+        <div class="card-content" data-comedian-id="<%= comedian.id %>">
+          <span class="comedian"><%= comedian.name %> (<%= comedian.country %>)</span> 
+
+          <% if current_user.liked_comedians.member?(comedian) %>
+            <span><img class="emoticon" src=<%= image_path('emoji.png') %> alt="laugh"></span>
+          <% else %>
+          <span><img class="emoticon gray" src=<%= image_path('emoji.png') %> alt="laugh"></span>
+        <% end %>
+        </div>
+      </div> 
+    <% end %>
+  </div>
+
+
+
+
 </div>
 
-<script>
-  $(document).ready(function() {
-    $('.emoticon').on('click', toggleLike);
-    $(".button-collapse").sideNav();
-  });
-</script>
+
+

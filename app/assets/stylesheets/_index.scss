@@ -3,10 +3,16 @@ body {
   background-color: $primary-color-light;
 }
 
+.photo {
+  width: 250px;
+}
+
 .card {
   background-color: $primary-color;
   display: inline-block;
+
 }
+
 
 .emoticon {
   width: 30px;
@@ -26,3 +32,16 @@ nav {
 .comedian {
   color: white;
 }
+
+#search {
+  display: inline-block;
+}
+
+#mobile-search {
+  color: black;
+}
+
+nav .brand-logo {
+  padding-left: 3%;
+ }
+

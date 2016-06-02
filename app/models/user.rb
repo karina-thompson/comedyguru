@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     email.nil? && persisted?
   end
 
-  def recommended_comedians
+  def suggested_comedians
     list = []
     liked_comedians.each do |comedian|
       comedian.similar_comedians.each do |comedian|
