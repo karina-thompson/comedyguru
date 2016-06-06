@@ -37,7 +37,6 @@ Comedian.create(name:'Tripod', country: 'AUS', image:'http://static.comedyfestiv
   User.create(password: "secret#{count}")
 end
 
-Like.destroy_all
 
 6.times do |count|
   Like.create(user_id: 43, comedian_id: 1400 + count)
