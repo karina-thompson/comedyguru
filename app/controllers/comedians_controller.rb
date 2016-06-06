@@ -11,7 +11,5 @@ class ComediansController < ApplicationController
   def search
     @comedians = Comedian.where("name ilike ?","%#{params[:search]}%")
     render :index
-  end
-
-  
+  end  
 end

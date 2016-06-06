@@ -101,8 +101,6 @@
         0,
         0,
         0,
-        0,
-        0,
         0
       ],
       "/Users/Karina/wdi/final_project/comedyrecommendations/app/controllers/sessions_controller.rb": [
@@ -131,7 +129,6 @@
         0
       ],
       "/Users/Karina/wdi/final_project/comedyrecommendations/app/controllers/users_controller.rb": [
-        0,
         0,
         0,
         0,
@@ -207,6 +204,6 @@
         0
       ]
     },
-    "timestamp": 1464868005
+    "timestamp": 1464920527
   }
 }
