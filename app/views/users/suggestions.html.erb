@@ -1,23 +1,26 @@
 
 <div class="container">
-
   <div class="row">
-    <h3 class="flow-text heading">Based on a highly scientific matching process of your favourite comedians and those of other users, these comedians have a high probabilty of also making you laugh</h3>
-   <% @comedians[0..3].each do |comedian| %>
-
+    <% if current_user.has_likes? %>
+      <h3 class="flow-text heading">Based on a highly scientific matching process of your favourite comedians and those of other users, these comedians have a high probabilty of also making you laugh</h3>
+      
+      <% @comedians[0..3].each do |comedian| %>
       <div class="card">
-          <a href="../comedian/<%= comedian.id %>"><img class="photo" src=<%= comedian.image %>></a>  
-        <div class="card-content" data-comedian-id="<%= comedian.id %>">
-          <span class="comedian"><%= comedian.name %> (<%= comedian.country %>)</span> 
+        <a href="../comedian/<%= comedian.id %>"><img class="photo" src=<%= comedian.image %>></a>  
+          <div class="card-content" data-comedian-id="<%= comedian.id %>">
+            <span class="comedian"><%= comedian.name %> (<%= comedian.country %>)</span> 
 
-          <% if current_user.liked_comedians.member?(comedian) %>
-            <span><img class="emoticon" src=<%= image_path('emoji.png') %> alt="laugh"></span>
-          <% else %>
-          <span><img class="emoticon gray" src=<%= image_path('emoji.png') %> alt="laugh"></span>
-        <% end %>
-        </div>
-      </div> 
-    <% end %>
+            <% if current_user.liked_comedians.member?(comedian) %>
+              <span><img class="emoticon" src=<%= image_path('emoji.png') %> alt="laugh"></span>
+            <% else %>
+            <span><img class="emoticon gray" src=<%= image_path('emoji.png') %> alt="laugh"></span>
+          <% end %>
+          </div>
+        </div> 
+      <% end %>
   </div>
-
+    <% else %>
+      <h3 class="flow-text heading">Select at least one comedian who makes you laugh to see recommendations here!</h3>
+      <a href="/" class="btn waves-effect waves-light">BACK</a>
+    <% end %>  
 </div>

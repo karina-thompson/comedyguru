@@ -24,4 +24,9 @@ class User < ActiveRecord::Base
     sorted = counts.sort_by { |_,count| -count }.to_h
     sorted.map { |comedian,_| comedian }
   end
+
+  def has_likes?
+    !liked_comedians.empty?
+  end
+
 end

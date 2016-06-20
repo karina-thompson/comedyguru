@@ -2,6 +2,10 @@
 
 
 <div class="container">
+  <% unless current_user.has_likes? %>
+    <h3 class="flow-text heading">Select at least one comedian who makes you laugh to see your likes here!</h3>
+    <a href="/" class="btn waves-effect waves-light">BACK</a>
+  <% end %>
 
   <div class="row">
    <% @comedians.each do |comedian| %>

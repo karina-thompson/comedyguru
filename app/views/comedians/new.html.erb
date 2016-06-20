@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <div class="card-panel white">
+          <div class="row">
+          <h2 class="flow-text heading"><strong>Add a Comedian to the Database - Feature Coming Soon!</strong></h2>
+          <%= form_for(:comedian, url: comedian_new_path) do |f|  %>
+            <div class="input-field col s12">
+             <%= f.text_field :name, class: 'validate', required: true, disabled: true %>
+             <%= f.label :name, "Comedian's Name" %>
+            </div>
+            <div class="input-field col s12">
+              <%= f.text_field :country, class: 'validate', required: true, disabled: true %>
+              <%= f.label :country, "Country" %>
+            </div>
+            <div class="input-field col s12">
+                <%= f.text_field :image_url, class: 'validate', required: true, disabled: true %>
+                <%= f.label :image_url, "Image URL" %>
+            </div>
+                <%= f.submit "Submit" , class: "btn disabled" %></%>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

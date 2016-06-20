@@ -19,8 +19,10 @@ var toggleLike = function(event) {
     }
   }
 
-  $.ajax(settings).done(function() {
+  $(event.target).toggleClass('gray');
+  
+  $.ajax(settings).fail(function() {
     $(event.target).toggleClass('gray');
-});
+  });
 }
 

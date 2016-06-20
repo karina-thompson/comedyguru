@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   get '/'             => 'comedians#index'
   get '/search' => 'comedians#search'
+  get '/comedian/new' => 'comedians#new'
+  post '/comedian/new' => 'comedians#create'
   get '/comedian/:id' => 'comedians#show'
-
 
   get '/signup'  => 'users#new'
   post '/signup' => 'users#create'
@@ -12,7 +13,6 @@ Rails.application.routes.draw do
   get '/user/likes'       => 'users#likes' 
   post '/user/likes'      => 'likes#create'
   delete '/user/likes'    => 'likes#delete'
-
 
   get '/login'     => 'sessions#show'
   post '/login'    => 'sessions#login'

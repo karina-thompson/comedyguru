@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Make me Laugh</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -30,6 +30,7 @@
       <li><a href="/user/likes">My Likes</a></li>
       <li><a href="/user/suggestions">Recommendations</a></li>
       <% if logged_in? %>
+        <li><a href="/comedian/new">Add to the Database</a></li>
         <li><%= link_to 'Logout', logout_path, method: :delete %></li>
       <% else %>
         <li><a href="/login">Login</a></li>
@@ -42,9 +43,11 @@
           <label for="search"><i class="material-icons" id="mobile-search">search</i></label>
         </div>
       </form></li>
+      <li><a class="modal-trigger" href="#modal1">About</a></li>
       <li><a href="/user/likes">My Likes</a></li>
       <li><a href="/user/suggestions">Recomendations</a></li>
       <% if logged_in? %>
+        <li><a href="/comedian/new">Add to the Database</a></li>
         <li><%= link_to 'Logout', logout_path, method: :delete %></li>
       <% else %>
         <li><a href="/login">Login</a></li>
@@ -75,8 +78,7 @@ $(document).ready(function() {
   $('.emoticon').on('click', toggleLike);
   $('.button-collapse').sideNav();
   $('.modal-trigger').leanModal({
-    dismissible: true, 
-    opacity: .5, 
+    dismissible: true,
     in_duration: 300, 
     out_duration: 200
   });

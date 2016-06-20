@@ -1,7 +1,7 @@
 class ComediansController < ApplicationController
   
   def index
-    @comedians = Comedian.all
+    @comedians = Comedian.all.shuffle
   end
 
   def show
@@ -11,5 +11,13 @@ class ComediansController < ApplicationController
   def search
     @comedians = Comedian.where("name ilike ?","%#{params[:search]}%")
     render :index
-  end  
+  end 
+
+  def new
+  end
+
+  def create
+    render :new
+  end
+
 end
