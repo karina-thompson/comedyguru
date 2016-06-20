@@ -26,6 +26,7 @@
           <i class="material-icons">close</i>
         </div>
       </form></li>
+      <li><a class="modal-trigger" href="#modal1">About</a></li>
       <li><a href="/user/likes">My Likes</a></li>
       <li><a href="/user/suggestions">Recommendations</a></li>
       <% if logged_in? %>
@@ -52,6 +53,17 @@
   </div>
 </nav>
 
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h5>Ever wondered how to find new comedians you might enjoy?</h5>
+      <p>Select your favourite comedians by clicking on the laughter emoticons.</p>
+      <p>Personal recommendations are accessible once you have selected at least one.</p>
+      <p>Alternatively, click on a comedian to see recommendations for similar comedians.</p>
+      <a href="#!" class="modal-action modal-close btn-flat">Close</a>
+    </div>
+  </div>
+
 
 <%= yield %>
 
@@ -61,6 +73,12 @@
 <script>
 $(document).ready(function() {
   $('.emoticon').on('click', toggleLike);
-  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav();
+  $('.modal-trigger').leanModal({
+    dismissible: true, 
+    opacity: .5, 
+    in_duration: 300, 
+    out_duration: 200
+  });
 });
 </script>

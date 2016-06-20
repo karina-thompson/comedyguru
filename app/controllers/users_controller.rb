@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       unless saved
         render '/users/new'
         # error message needs to go in here
+        # (╯°□°）╯︵ ┻━┻
         return
       end
     end
