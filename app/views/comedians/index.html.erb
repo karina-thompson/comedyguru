@@ -1,9 +1,9 @@
-
-
-
-
-
 <div class="container">
+
+  <% if @comedians.empty? %>
+    <h3 class="flow-text heading">No comedians match that criteria!</h3>
+    <a href="/" class="btn waves-effect waves-light">BACK</a>
+  <% end %>
 
   <div class="row">
    <% @comedians.each do |comedian| %>
