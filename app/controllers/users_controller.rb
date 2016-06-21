@@ -9,9 +9,7 @@ class UsersController < ApplicationController
                           password: params[:user][:password], 
                           password_confirmation: params[:user][:password_confirmation])
       unless saved
-        render '/users/new'
-        # error message needs to go in here
-        # (╯°□°）╯︵ ┻━┻
+        redirect_to '/signup', alert: "Passwords don't match"
         return
       end
     end

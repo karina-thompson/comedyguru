@@ -30,7 +30,7 @@
       <li><a href="/user/likes">My Likes</a></li>
       <li><a href="/user/suggestions">Recommendations</a></li>
       <% if logged_in? %>
-        <li><a href="/comedian/new">Add to the Database</a></li>
+        <li><a href="/comedian/new">Add a Comedian</a></li>
         <li><%= link_to 'Logout', logout_path, method: :delete %></li>
       <% else %>
         <li><a href="/login">Login</a></li>
@@ -47,7 +47,7 @@
       <li><a href="/user/likes">My Likes</a></li>
       <li><a href="/user/suggestions">Recomendations</a></li>
       <% if logged_in? %>
-        <li><a href="/comedian/new">Add to the Database</a></li>
+        <li><a href="/comedian/new">Add a Comedian</a></li>
         <li><%= link_to 'Logout', logout_path, method: :delete %></li>
       <% else %>
         <li><a href="/login">Login</a></li>

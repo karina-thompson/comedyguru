@@ -1,4 +1,8 @@
-
+<% if alert %>
+  <script>
+      Materialize.toast("Passwords don't match, please try again", 3000, 'rounded');
+  </script>
+<% end %>
 
 <div class="container">
   <div class="row">
